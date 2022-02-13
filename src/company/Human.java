@@ -1,5 +1,7 @@
 package company;
 
+import company.devices.Car;
+
 public class Human {
     Animal pet = new Animal("Lion");
     private Car car = new Car("model1","producer1");
@@ -35,4 +37,7 @@ public class Human {
         }
     }
 
+    public String toString(){
+        return pet.toString()+" "+salary+" "+car.toString();
+    }
 }

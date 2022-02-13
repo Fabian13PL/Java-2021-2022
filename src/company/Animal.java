@@ -36,4 +36,7 @@ public class Animal {
             System.out.println("This "+species+" is dead");
         }
     }
+    public String toString(){
+        return species+" "+weight;
+    }
 }

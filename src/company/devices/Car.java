@@ -1,4 +1,4 @@
-package company;
+package company.devices;
 
 public class Car {
     final String model;
@@ -14,5 +14,8 @@ public class Car {
     }
     public void setValue(Double value){
         this.value=value;
+    }
+    public String toString(){
+        return model+" "+producer+" "+value;
     }
 }
