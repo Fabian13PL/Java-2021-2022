@@ -4,7 +4,7 @@ import company.devices.Car;
 
 public class Human {
     Animal pet = new Animal("Lion");
-    private Car car = new Car("model1","producer1");
+    private Car car = new Car();
 
     private Double salary;
 

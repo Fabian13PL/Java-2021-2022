@@ -12,8 +12,8 @@ public class Main {
 
         Human jaba = new Human();
 
-        Car car1 = new Car("model1","producer1");
-        Car car2 = new Car("model1","producer1");
+        Car car1 = new Car();
+        Car car2 = new Car();
 
         System.out.println(car1.equals(car2));
         System.out.println(car1==car2);

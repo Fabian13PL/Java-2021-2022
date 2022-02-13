@@ -1,4 +1,8 @@
 package company.devices;
 
-public class Phone {
+public class Phone extends Devices{
+    @Override
+    void turnOn() {
+
+    }
 }
