@@ -1,10 +1,13 @@
 package company;
 
 import company.devices.Car;
+import company.devices.Phone;
 
 public class Human {
+    public Double cash;
     Animal pet = new Animal("Lion");
     private Car car = new Car();
+    private Phone phone = new Phone();
 
     private Double salary;
 
@@ -21,23 +24,28 @@ public class Human {
             this.salary=salary;
         }
     }
+
+    public void setCar(Car car){
+        this.car=car;
+    }
+    public void setPhone(Phone phone){
+        this.phone=phone;
+    }
     public Car getCar(){
         return car;
     }
-
-    public void setCar(String model, String producer, Double value){
-        if(value<salary){
-            System.out.println("You bought car");
-            car.setValue(value);
-        }else if((value/12)<salary){
-            System.out.println("You bought car for credit");
-            car.setValue(value);
-        }else {
-            System.out.println("enroll in studies and find a new job or go for a raise");
-        }
+    public Phone getPhone(){
+        return phone;
     }
 
     public String toString(){
         return pet.toString()+" "+salary+" "+car.toString();
+    }
+    public Animal getAnimal() {
+        return pet;
+    }
+
+    public void setAnimal(Animal animal) {
+        pet=animal;
     }
 }
