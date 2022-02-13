@@ -2,6 +2,7 @@ package company;
 
 public class Human {
     Animal pet = new Animal("Lion");
+    private Car car = new Car("model1","producer1");
 
     private Double salary;
 
@@ -18,4 +19,20 @@ public class Human {
             this.salary=salary;
         }
     }
+    public Car getCar(){
+        return car;
+    }
+
+    public void setCar(String model, String producer, Double value){
+        if(value<salary){
+            System.out.println("You bought car");
+            car.setValue(value);
+        }else if((value/12)<salary){
+            System.out.println("You bought car for credit");
+            car.setValue(value);
+        }else {
+            System.out.println("enroll in studies and find a new job or go for a raise");
+        }
+    }
+
 }
