@@ -24,17 +24,31 @@ public abstract class Car extends Devices {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        if (seller.getPhone() == null) {
-            System.out.println("seller don't have car to sell");
-        } else if (buyer.cash < price) {
-            System.out.println("buyer don't have cash");
-        } else {
-            buyer.cash -= price;
-            seller.cash += price;
-            buyer.setCar(seller.getCar());
-            seller.setCar(null);
-            System.out.println(seller + " sold " + buyer.getCar() + " to " + buyer + " for " + price);
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        int sellerCar = 0, buyerCar = 0;
+        for (int i = 0; i < seller.garageSize(); i++) {
+            if (seller.getCar(i).getValue() == price)
+                sellerCar = i;
+            else if (i == seller.garageSize() - 1)
+                throw new Exception("seller don't have this car");
         }
+
+        for (int i = 0; i < buyer.garageSize(); i++) {
+            if (seller.getCar(i) == null) {
+                sellerCar = i;
+                break;
+            } else if (i == buyer.garageSize())
+                throw new Exception("buyer don't have space for new car");
+        }
+
+        if (buyer.cash < price)
+            throw new Exception("buyer don't have cash");
+
+        buyer.cash -= price;
+        seller.cash += price;
+        buyer.setCar(seller.getCar(sellerCar), buyerCar);
+        seller.deleteCar(sellerCar);
+        System.out.println(seller + " sold " + buyer.getCar(buyerCar) + " to " + buyer + " for " + price);
+
     }
 }

@@ -8,10 +8,14 @@ public abstract class Devices implements Salleable {
     int yearOfProduction;
     Double value;
 
-    public String toString(){
-        return model+" "+producer+" "+yearOfProduction;
+    public String toString() {
+        return model + " " + producer + " " + yearOfProduction;
     }
 
     abstract void turnOn();
+
+    public int getYear() {
+        return yearOfProduction;
+    }
 
 }
